@@ -5,7 +5,7 @@ A pair of libraries for arranging forms in [Elm](elm-lang.org), by Max Goldstein
 Function names are chosen with the expectation that the modules will imported
 qualified, e.g. `Align.top`.  
 
-Examples are given in the top-level directory because Elm does not currently support importing custom modules from other directories.  
+When running the examples, you must run `elm-server` from the top directory, not the examples directory. If you come up with a cool example, send me a pull request.  
 
 ## Align
 Aligns all forms to the edge or centerline of the bounding box of the centers of the forms.
