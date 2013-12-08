@@ -1,0 +1,10 @@
+{ "version": "1.0"
+, "summary": "Align and Distribute"
+, "description": "Align and Distribute libraries for forms"
+, "license": "BSD3"
+, "repository": "https://github.com/mgold/Elm-Align-Distribute.git"
+, "exposed-modules":
+    [ "Align"
+    , "Distribute"
+    ]
+}
