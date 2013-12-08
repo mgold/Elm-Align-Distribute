@@ -39,7 +39,7 @@ horiz frms = let t = maximum <| map .y frms
                  mid = (t + bot) / 2
              in map (\frm -> {frm | y <- mid}) frms
 
-{-| Align forms vertically, halfway between the leftmost and rightmost Forms. -}
+{-| Align forms vertically, halfway between the leftmost and rightmost forms. -}
 vert : [Form] -> [Form]
 vert frms = let rgt = maximum <| map .x frms
                 lft= minimum <| map .x frms
