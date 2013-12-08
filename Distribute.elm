@@ -57,8 +57,8 @@ verticalAlong len frms = let n = length frms
 
 {-| Distribute forms with even angular spacing around a centerpoint at a given
 radius. -}
-angular : (Float, Float) -> Float -> [Form] -> [Form]
-angular (x,y) r frms = case frms of
+radial : (Float, Float) -> Float -> [Form] -> [Form]
+radial (x,y) r frms = case frms of
     [] -> []
     _ -> let n = length frms
              dtheta = turns (1 / toFloat n)
@@ -68,8 +68,8 @@ angular (x,y) r frms = case frms of
 
 {-| Distribute forms with even angular spacing around a centerpoint at a given
 radius, and rotate them. -}
-angularRotate : (Float, Float) -> Float -> [Form] -> [Form]
-angularRotate (x,y) r frms = case frms of
+radialRotate : (Float, Float) -> Float -> [Form] -> [Form]
+radialRotate (x,y) r frms = case frms of
     [] -> []
     _ -> let n = length frms
              dtheta = turns (1 / toFloat n)
