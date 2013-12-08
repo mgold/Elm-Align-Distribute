@@ -5,10 +5,10 @@ Function names are chosen with the expectation that this module will imported
 qualified, e.g. `Align.top`.
 
 # Horizontal
-@docs top, bottom, horiz
+@docs top, bottom, horizontal
 
 # Vertical
-@docs left, right, vert
+@docs left, right, vertical
 -}
 
 {-| Align forms with the uppermost form. -}
@@ -33,16 +33,16 @@ right frms = let rgt = maximum <| map .x frms
 
 {-| Align forms horizontally, halfway between the uppermost and bottommost
  forms. -}
-horiz : [Form] -> [Form]
-horiz frms = let t = maximum <| map .y frms
-                 bot = minimum <| map .y frms
-                 mid = (t + bot) / 2
-             in map (\frm -> {frm | y <- mid}) frms
+horizontal : [Form] -> [Form]
+horizontal frms = let t = maximum <| map .y frms
+                      bot = minimum <| map .y frms
+                      mid = (t + bot) / 2
+                  in map (\frm -> {frm | y <- mid}) frms
 
 {-| Align forms vertically, halfway between the leftmost and rightmost forms. -}
-vert : [Form] -> [Form]
-vert frms = let rgt = maximum <| map .x frms
-                lft= minimum <| map .x frms
-                mid = (rgt + lft) / 2
-            in map (\frm -> {frm | x <- mid}) frms
+vertical : [Form] -> [Form]
+vertical frms = let rgt = maximum <| map .x frms
+                    lft= minimum <| map .x frms
+                    mid = (rgt + lft) / 2
+                in map (\frm -> {frm | x <- mid}) frms
 

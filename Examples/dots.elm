@@ -8,4 +8,4 @@ dots =
     , circle 20 |> filled black
     ]
 
-main = collage 600 600 <| [ group dots |> alpha 0.5 ] ++ Align.horiz dots
+main = collage 600 600 <| [ group dots |> alpha 0.5 ] ++ Align.horizontal dots
