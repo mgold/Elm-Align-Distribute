@@ -1,43 +1,50 @@
 # Align and Distribute Libraries for Elm
 
-A pair of libraries for arranging forms in [Elm](elm-lang.org), by Max Goldstein.  
+A pair of libraries for arranging forms in [Elm](elm-lang.org), by Max Goldstein.
 
-Function names are chosen with the expectation that the modules will imported
-qualified, e.g. `Align.top`.  
+To dive right in, have a look in the Examples directory.
 
-When running the examples, you must run `elm-server` from the top directory, not the examples directory. If you come up with a cool example, send me a pull request.  
+Submit bugs, requests, and the like through GitHub.
 
 ## Align
-Aligns all forms to the edge or centerline of the bounding box of the centers of the forms.
+
+Aligns all forms to the edge or centerline of the bounding box of the centers
+of the forms. In all cases, only one of the _x_ and _y_ coordinates is changed.
 
 ````
-Align.top    : [Form] -> [Form]
-Align.bottom : [Form] -> [Form]
-Align.left   : [Form] -> [Form]
-Align.right  : [Form] -> [Form]
-Align.horiz  : [Form] -> [Form]
-Align.vert   : [Form] -> [Form]
+Align.top         : List Form -> List Form
+Align.bottom      : List Form -> List Form
+Align.left        : List Form -> List Form
+Align.right       : List Form -> List Form
+Align.horizontal  : List Form -> List Form
+Align.vertical    : List Form -> List Form
 ````
 
 ## Distribute
-Distribute forms with even distances from center-to-center within their bounding box. The extema do not move.
+
+Distribute forms with even distances from center-to-center within their
+bounding box. Distributing horizontally changes only the _x_ coordinate, and
+distributing vertically changes only the _y_ coordinate.
 
 ````
-Distribute.horiz : [Form] -> [Form]
-Dsitribute.vert  : [Form] -> [Form]
+Distribute.horizontal : List Form -> List Form
+Dsitribute.vertical   : List Form -> List Form
 ````
 
-Distribute forms with even distances from center-to-center along the given length, centered.
+Distribute forms with even distances from center-to-center along the given
+length, centered.
 
 ````
-Distribute.horizAlong : Float -> [Form] -> [Form]
-Dsitribute.vertAlong  : Float -> [Form] -> [Form]
+Distribute.horizAlong : Float -> List Form -> List Form
+Dsitribute.vertAlong  : Float -> List Form -> List Form
 ````
 
 Distribute forms with even angular spacing around a centerpoint at a given
-radius, and optionally rotate them.
+radius. Forms are kept in the order provided, with the first form being
+directly left of the centerpoint and others going counterclockwise. Optionally,
+rotate the forms by an amount proportional to their angle.
 
 ````
-Distribute.angular    : (Float, Float) -> Float -> [Form] -> [Form]
-Distribute.angularRot : (Float, Float) -> Float -> [Form] -> [Form]
+Distribute.angular    : (Float, Float) -> Float -> List Form -> List Form
+Distribute.angularRot : (Float, Float) -> Float -> List Form -> List Form
 ````

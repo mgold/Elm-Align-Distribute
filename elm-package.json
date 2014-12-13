@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "summary": "Align and Distribute libraries for forms",
+    "repository": "https://github.com/mgold/Elm-Align-Distribute.git",
+    "license": "BSD3",
+    "source-directories": [
+        "."
+    ],
+    "exposed-modules": ["Align", "Distribute"],
+    "dependencies": {
+        "elm-lang/core": "1.0.0 <= v < 2.0.0"
+    }
+}
