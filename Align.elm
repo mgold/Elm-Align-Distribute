@@ -1,6 +1,4 @@
 module Align where
-import List (maximum, minimum, map)
-import Graphics.Collage (Form)
 {-| Align forms to the horizontal or vertical lines of their bounding box.
 
 Function names are chosen with the expectation that this module will imported
@@ -12,6 +10,9 @@ qualified, e.g. `Align.top`.
 # Vertical
 @docs left, right, vertical
 -}
+
+import List (maximum, minimum, map)
+import Graphics.Collage (Form)
 
 {-| Align forms with the uppermost form. -}
 top : List Form -> List Form

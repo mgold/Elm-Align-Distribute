@@ -1,6 +1,4 @@
 module Distribute where
-import List (maximum, minimum, map, map2, length)
-import Graphics.Collage (Form, rotate)
 
 {-| Distribute forms evenly within their bounding box, along a line, or on a
 circle.
@@ -14,6 +12,9 @@ qualified, e.g. `Distribute.top`.
 # Radial
 @docs radial, radialRotate
 -}
+
+import List (maximum, minimum, map, map2, length)
+import Graphics.Collage (Form, rotate)
 
 {-| Distribute forms with even horizontal spacing within the bounding box of
 their centers. -}
