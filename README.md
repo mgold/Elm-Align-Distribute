@@ -1,8 +1,10 @@
-# Align and Distribute Libraries for Elm
+# Align and Distribute for Elm
 
 A pair of libraries for arranging forms in [Elm](elm-lang.org), by Max Goldstein.
 
-To dive right in, have a look in the Examples directory.
+![Demonstration Animation](/Examples/animation.gif?raw=true)
+
+The code for the above gif (more or less) is available in the examples directory.
 
 Submit bugs, requests, and the like through GitHub.
 
