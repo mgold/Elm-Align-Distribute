@@ -1,5 +1,5 @@
-import Graphics.Collage (circle, filled, move, collage, group, alpha, Form)
-import Graphics.Element (Element, flow, down, container, middle)
+import Graphics.Collage exposing (circle, filled, move, collage, group, alpha, Form)
+import Graphics.Element exposing (Element, flow, down, container, middle, centered)
 import Color
 import Text
 import Array
@@ -35,11 +35,11 @@ dots =
     ]
 
 title : String -> Element
-title s = let format = Text.fromString >> Text.height 36 >> Text.typeface ["Futura"] >> Text.centered
+title s = let format = Text.fromString >> Text.height 36 >> Text.typeface ["Futura"] >> centered
           in container 600 50 middle (format s)
 
 subtitle : String -> Element
-subtitle s = let format = Text.fromString >> Text.height 24 >> Text.typeface ["Futura"] >> Text.centered
+subtitle s = let format = Text.fromString >> Text.height 24 >> Text.typeface ["Futura"] >> centered
           in container 600 30 middle (format s)
 
 scene : Int -> Element
