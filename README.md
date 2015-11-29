@@ -1,5 +1,10 @@
 # Align and Distribute for Elm
 
+**0.16 Note:** This library will not be updated for Elm 0.16 because it needs
+access to the internal representation of Forms, which became inaccessible with
+the new release. If anyone knows a way around this, please open an issue and
+let me know.
+
 A pair of libraries for arranging forms in [Elm](elm-lang.org), by Max Goldstein.
 
 ![Demonstration Animation](/Examples/animation.gif?raw=true)
