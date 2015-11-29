@@ -29,7 +29,7 @@ horizontal frms =
             right = maximum <| map .x frms
             dx = (right - left) / toFloat (n-1)
             zipped = map2 (,) frms [0..n-1]
-        in map (\(frm, t) -> {frm|x <- left + dx * toFloat t}) zipped
+        in map (\(frm, t) -> {frm|x = left + dx * toFloat t}) zipped
 
 {-| Distribute forms with even vertical spacing within the bounding box of their
 centers. -}
@@ -40,7 +40,7 @@ vertical frms =
         let bot = minimum <| map .y frms
             top = maximum <| map .y frms
             dy = (top - bot) / toFloat (n-1)
-        in indexedMap (\i frm -> {frm|y <- bot + dy * toFloat i}) frms
+        in indexedMap (\i frm -> {frm|y = bot + dy * toFloat i}) frms
 
 {-| Distribute forms with even horizontal spacing along the given length. -}
 horizontalAlong : Float -> List Form -> List Form
@@ -49,7 +49,7 @@ horizontalAlong len frms =
         halfL = len / 2
         dx = len / toFloat (n-1)
     in if n < 2 then frms else
-       indexedMap (\i frm -> {frm|x <- dx * toFloat i - halfL}) frms
+       indexedMap (\i frm -> {frm|x = dx * toFloat i - halfL}) frms
 
 {-| Distribute forms with even vertical spacing along the given height. -}
 verticalAlong : Float -> List Form -> List Form
@@ -58,7 +58,7 @@ verticalAlong len frms =
         halfL = len / 2
         dy = len / toFloat (n-1)
     in if n < 2 then frms else
-        indexedMap (\i frm -> {frm|y <- dy * toFloat i - halfL}) frms
+        indexedMap (\i frm -> {frm|y = dy * toFloat i - halfL}) frms
 
 {-| Distribute forms with even angular spacing around a centerpoint at a given
 radius. -}
@@ -67,8 +67,8 @@ radial (x,y) r frms =
     let dtheta = turns (1 / toFloat (length frms))
         rot i frm =
             let t = toFloat i*dtheta
-            in {frm|x <- x + r * cos t,
-                    y <- y + r * sin t}
+            in {frm|x = x + r * cos t,
+                    y = y + r * sin t}
     in indexedMap rot frms
 
 {-| Distribute forms with even angular spacing around a centerpoint at a given
@@ -78,8 +78,8 @@ radialRotate (x,y) r frms =
     let dtheta = turns (1 / toFloat (length frms))
         rot i frm =
             let t = toFloat i*dtheta
-            in {frm|x <- x + r * cos t,
-                    y <- y + r * sin t}
+            in {frm|x = x + r * cos t,
+                    y = y + r * sin t}
                    |> rotate t
     in indexedMap rot frms
 
